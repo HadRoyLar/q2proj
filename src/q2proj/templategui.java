@@ -5,7 +5,7 @@ import java.awt.*;
 
 
 public class templategui{
-    
+    /*IDK*/
     JFrame frame;
     JLabel navback;
     RoundedButton next;

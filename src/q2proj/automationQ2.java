@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CSQ2;
+package q2proj;
 
 import java.util.*;
 
@@ -40,6 +40,8 @@ public class automationQ2 {
         System.out.print("\n   d(diagonal) = (n(n-3))/2");
         System.out.print("\n   d(diagonal) = (" + num + "(" + num + "-3" + "))/2" );
         System.out.print("\n   d(diagonal) = " + dia );
+        
+        /*testcomment*/
         
     }
 }

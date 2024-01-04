@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class menu{
+public class menu {
     
     JFrame frame;
     JLabel navback;
     JLabel mainmenutxt;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
-    
+    /*ss*/
     
    
     
@@ -30,6 +30,10 @@ public class menu{
   
     
     public void setFrame() {
+        
+        
+        
+        
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
         
         frame.getContentPane().setBackground(new java.awt.Color(43, 43, 43, 255));
