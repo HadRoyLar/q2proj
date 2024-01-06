@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author ADMIN
+ * @author Keiara
  */
 public class automationQ2 {
     public static void main(String [] args){

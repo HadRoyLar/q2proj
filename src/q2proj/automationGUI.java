@@ -6,20 +6,21 @@ package q2proj;
 
 /**
  *
- * @author RoyLar and admin
+ * @author RoyLar
  */
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-
-public class automationGUI {
+public class automationGUI implements ActionListener {
     JFrame frame;
     JLabel navback;
-    RoundedButton next;
-    RoundedButton previous;
-    RoundedButton enter;
+    RoundedButton clear;
+    RoundedButton menu;
     RegPolygon p;
+    Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
+    JLabel autotxt;
     
     public automationGUI() {
     
@@ -28,9 +29,9 @@ public class automationGUI {
 
         frame = new JFrame();
         navback = new JLabel();
-        next = new RoundedButton("→", 10, 220);
-        previous = new RoundedButton("←", 10, 220);
-        enter = new RoundedButton("OK", 15, 220);
+        clear = new RoundedButton("Clear",10,220);
+        menu = new RoundedButton("Menu",10,220);
+        autotxt = new JLabel("Automations");
 }
     public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
@@ -40,22 +41,18 @@ public class automationGUI {
         
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.add(previous, new Rectangle(1,26,3,1));
-        frame.add(enter, new Rectangle(5,26,3,1));
-        frame.add(next, new Rectangle(9,26,3,1));
-        previous.setBackground(Color.gray);
-        previous.setFont(new Font("Arial", Font.BOLD, 40));
-        previous.setMargin(new Insets(1,1,7,1));
-        next.setFont(new Font("Arial", Font.BOLD, 40));
-        next.setMargin(new Insets(1,1,7,1));
-        enter.setFont(new Font("Arial", Font.BOLD, 15));
-        enter.setMargin(new Insets(2,1,1,2));
-        enter.setBackground(Color.gray);
-        next.setBackground(Color.gray);
+        frame.add(autotxt, new Rectangle(33,26,8,1));
+        
+        frame.add(clear, new Rectangle(1,26,4,1));
+        frame.add(menu, new Rectangle(6,26,4,1));
+        clear.setBackground(Color.gray);
+        clear.setFont(new Font("Arial", Font.BOLD, 13));
+        menu.setFont(new Font("Arial", Font.BOLD, 13));
+        menu.setBackground(Color.gray);
         
         
-        RegPolygon p = new RegPolygon(3, 90,4,3);
-        frame.add(p, new Rectangle(26,2,12,12));
+        p = new RegPolygon(4, 130,4,3);
+        frame.add(p, new Rectangle(22,2,17,17));
         p.setOpaque(false);
         p.setForeground(Color.LIGHT_GRAY);
         
@@ -65,15 +62,33 @@ public class automationGUI {
         
         
         
+        autotxt.setForeground(Color.LIGHT_GRAY);
+        autotxt.setOpaque(false);
+        autotxt.setFont(f1);
+        
         
        
         frame.setVisible(true);
         
+        clear.addActionListener(this);
+        menu.addActionListener(this);
 }
     
     public static void main (String[] args) {
         automationGUI q = new automationGUI();
         q.setFrame();
+    }
+
+    public void actionPerformed(ActionEvent e) {
+       String action = e.getActionCommand();
+       
+       if(action.equals(menu.getActionCommand())) {
+           frame.dispose();
+           menu x = new menu();
+           x.setFrame();
+           
+           
+       }
     }
 
 }
