@@ -13,7 +13,7 @@ import java.util.*;
 public class automationQ2 {
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
-        System.out.println("INTERIOR AND EXTERIOR ANGLES, AND DIAGONALS OF A POLYGON");
+        System.out.println("INTERIOR AND EXTERIOR ANGLES, AND DIAGONALS OF A REGULAR POLYGON");
         
         float ia, ea, ia_sum;
         int dia;
@@ -29,6 +29,7 @@ public class automationQ2 {
         System.out.print("\n   S(sum of interior angles) = (n-2) x 180 ");
         System.out.print("\n   S(sum of interior angles) = (" + num + "-2) x 180");
         System.out.print("\n   S(sum of interior angles) = " + ia_sum);
+        System.out.print("\n   S(interior angle) = "+ia_sum+"/"+num);
         System.out.print("\n   Interior angle: " + ia);
         
         System.out.print("\n\n Computing for the exterior angle:");
