@@ -16,11 +16,12 @@ import java.awt.event.*;
 public class automationGUI implements ActionListener {
     JFrame frame;
     JLabel navback;
-    RoundedButton clear;
-    RoundedButton menu;
+    JButton clear;
+    JButton menu;
     RegPolygon p;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
     JLabel autotxt;
+    JTextField nosides;
     
     public automationGUI() {
     
