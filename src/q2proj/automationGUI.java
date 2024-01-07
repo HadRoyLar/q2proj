@@ -13,6 +13,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.EmptyBorder;
+import q2proj.RegPolygon;
+import q2proj.RoundTextField;
+import q2proj.RoundedButton;
 
 public class automationGUI implements ActionListener {
     JFrame frame;
