@@ -12,16 +12,21 @@ package q2proj;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.border.EmptyBorder;
 
 public class automationGUI implements ActionListener {
     JFrame frame;
     JLabel navback;
+    JLabel instruct;
     JButton clear;
     JButton menu;
     RegPolygon p;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
+    Font  f3  = new Font(Font.SANS_SERIF, Font.BOLD,  60);
+    Font  f2  = new Font(Font.SERIF, Font.TYPE1_FONT,  18);
     JLabel autotxt;
     JTextField nosides;
+    JLabel arrowto;
     
     public automationGUI() {
     
@@ -33,6 +38,10 @@ public class automationGUI implements ActionListener {
         clear = new RoundedButton("Clear",10,220);
         menu = new RoundedButton("Menu",10,220);
         autotxt = new JLabel("Automations");
+        instruct = new JLabel("Enter the number of sides of the polygon");
+        nosides = new RoundTextField(5);
+        arrowto = new JLabel("└");
+        
 }
     public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
@@ -51,8 +60,12 @@ public class automationGUI implements ActionListener {
         menu.setFont(new Font("Arial", Font.BOLD, 13));
         menu.setBackground(Color.gray);
         
+        frame.add(instruct, new Rectangle(2,2,20,2));
+        instruct.setFont(f2);
+        instruct.setForeground(Color.LIGHT_GRAY);
         
-        p = new RegPolygon(4, 130,4,3);
+        
+        p = new RegPolygon(5, 130,4,3);
         frame.add(p, new Rectangle(22,2,17,17));
         p.setOpaque(false);
         p.setForeground(Color.LIGHT_GRAY);
@@ -60,6 +73,20 @@ public class automationGUI implements ActionListener {
         frame.add(navback, new Rectangle(0,25,42,3));
         navback.setBackground(new java.awt.Color(67, 67, 67, 255));
         navback.setOpaque(true);
+        
+        frame.add(arrowto, new Rectangle(4,4,2,2));
+        
+        frame.add(nosides, new Rectangle(6,5,3,2));
+        nosides.setHorizontalAlignment(JTextField.CENTER);
+        nosides.setFont(f1);
+        nosides.setBackground(new java.awt.Color(67, 67, 67, 255));
+        nosides.setForeground(Color.LIGHT_GRAY);
+        
+        
+        
+        arrowto.setFont(f3);
+        arrowto.setBorder(new EmptyBorder(0, 0, 0, 0));
+        arrowto.setForeground(Color.GRAY);
         
         
         
