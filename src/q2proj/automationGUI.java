@@ -65,7 +65,7 @@ public class automationGUI implements ActionListener {
         instruct.setForeground(Color.LIGHT_GRAY);
         
         
-        p = new RegPolygon(5, 130,4,3);
+        p = new RegPolygon(3, 130,4,3);
         frame.add(p, new Rectangle(22,2,17,17));
         p.setOpaque(false);
         p.setForeground(Color.LIGHT_GRAY);
