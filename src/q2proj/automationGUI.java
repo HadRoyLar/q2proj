@@ -64,8 +64,9 @@ public class automationGUI implements ActionListener {
         instruct.setFont(f2);
         instruct.setForeground(Color.LIGHT_GRAY);
         
-        
-        p = new RegPolygon(3, 130,4,3);
+        //EXAMPLE = new RegPolygon (No. of Sides, Side Size, LIne Width, Rotation
+        //When you want the orientation to be correct No. Sides = Rotation, integer format
+        p = new RegPolygon(10, 130,3,10);
         frame.add(p, new Rectangle(22,2,17,17));
         p.setOpaque(false);
         p.setForeground(Color.LIGHT_GRAY);
