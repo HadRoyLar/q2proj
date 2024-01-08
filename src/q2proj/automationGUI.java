@@ -30,6 +30,7 @@ public class automationGUI implements ActionListener {
     Font  f4  = new Font(Font.SANS_SERIF, Font.BOLD,  35);
     Font  f2  = new Font(Font.SERIF, Font.TYPE1_FONT,  18);
     Font f0 = new Font("Arial", Font.BOLD, 13);
+    Font f5 = new Font(Font.DIALOG, Font.ITALIC, 12);
     JLabel autotxt;
     JTextField nosides;
     JLabel arrowto;
@@ -39,6 +40,8 @@ public class automationGUI implements ActionListener {
     JLabel ean;
     JLabel intangleillus;
     JLabel extangleillus;
+    JLabel polynames;
+    String s;
     
     public automationGUI() {
     
@@ -51,12 +54,16 @@ public class automationGUI implements ActionListener {
         menu = new RoundedButton("Menu",10,220);
         check = new RoundedButton("Check",10,220);
         autotxt = new JLabel("Automations");
+        p = new RegPolygon(8, 150,3,4);
         instruct = new JLabel("Enter the number of sides of the polygon");
         nosides = new RoundTextField(10);
         arrowto = new JLabel("└");
         intangle = new RoundTextField(5);
         extangle = new RoundTextField(5);
         ian = new JLabel("Interior Angle of Polygon");
+        ean = new JLabel("Exterior Angle of Polygon");s = p.polyname();
+        polynames = new JLabel(s);
+        
 }
     public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
@@ -76,6 +83,8 @@ public class automationGUI implements ActionListener {
         clear.setFont(f0);
         menu.setFont(f0);
         menu.setBackground(Color.gray);
+       
+        
         
         frame.add(instruct, new Rectangle(2,2,20,2));
         instruct.setFont(f2);
@@ -84,7 +93,6 @@ public class automationGUI implements ActionListener {
         //EXAMPLE = new RegPolygon (No. of Sides, Side Size, LIne Width, Rotation
         //When you want the orientation to be correct No. Sides = Rotation
         
-        p = new RegPolygon(4, 130,3,4);
         frame.add(p, new Rectangle(22,2,17,17));
         p.setOpaque(false);
         p.setForeground(Color.LIGHT_GRAY);
@@ -92,7 +100,6 @@ public class automationGUI implements ActionListener {
         frame.add(navback, new Rectangle(0,25,42,3));
         navback.setBackground(new java.awt.Color(67, 67, 67, 255));
         navback.setOpaque(true);
-        
         
         frame.add(nosides, new Rectangle(6,5,3,2));
         nosides.setHorizontalAlignment(JTextField.CENTER);
@@ -105,15 +112,25 @@ public class automationGUI implements ActionListener {
         intangle.setForeground(Color.LIGHT_GRAY);
         intangle.setHorizontalAlignment(JTextField.CENTER);
         
+        
+        
         extangle.setFont(f4);
         extangle.setBackground(new java.awt.Color(54, 54, 54, 255));
         extangle.setForeground(Color.LIGHT_GRAY);
         extangle.setHorizontalAlignment(JTextField.CENTER);
         
-        frame.add(intangle, new Rectangle(10,9,5,4));
-        frame.add(extangle, new Rectangle(10,15,5,4));
+        frame.add(intangle, new Rectangle(11,9,5,4));
+        frame.add(extangle, new Rectangle(11,15,5,4));
         
         frame.add(ian, new Rectangle(3,12,8,1));
+        frame.add(ean, new Rectangle(3,18,8,1));
+        ian.setHorizontalAlignment(JTextField.CENTER);
+        ian.setFont(f5);
+        ian.setForeground(Color.GRAY);
+        ean.setHorizontalAlignment(JTextField.CENTER);
+        ean.setFont(f5);
+        ean.setForeground(Color.GRAY);
+        
         
         
         frame.add(arrowto, new Rectangle(4,4,2,2));
@@ -121,6 +138,10 @@ public class automationGUI implements ActionListener {
         arrowto.setBorder(new EmptyBorder(0, 0, 0, 0));
         arrowto.setForeground(Color.GRAY);
         
+        frame.add(polynames, new Rectangle(24,20,13,3));
+        polynames.setFont(f1);
+        polynames.setForeground(Color.LIGHT_GRAY);
+        polynames.setHorizontalAlignment(JLabel.CENTER);
         
         
         autotxt.setForeground(Color.LIGHT_GRAY);
@@ -131,6 +152,7 @@ public class automationGUI implements ActionListener {
         
         clear.addActionListener(this);
         menu.addActionListener(this);
+        
 }
     
     public static void main (String[] args) {

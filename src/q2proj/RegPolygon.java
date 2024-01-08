@@ -16,12 +16,23 @@ public class RegPolygon extends JPanel {
     public int length;
     public int thick;
     public int rot;
+    public String polyname;
+    public int s;
+    
+   
 
     public RegPolygon (int sides, int length, int thick, int rot) {
         this.sides = sides;
+        sides = this.sides;
         this.length = length;
         this.thick = thick;
         this.rot = rot;
+        s = sides;
+        
+        
+        
+        
+        
     }
 
     @Override
@@ -53,4 +64,47 @@ public class RegPolygon extends JPanel {
         g.drawPolygon(xPoints, yPoints, sides);
        
     }
+    
+    public String polyname() {
+        sides = s;
+        if(sides==3){
+                polyname = "Triangle";
+            }
+        else if(sides==4){
+                polyname = "Square";
+            }
+            else if(sides==5){
+                polyname = "Pentagon";
+            }
+            else if(sides==6){
+                polyname = "Hexagon";
+            }
+            else if(sides==7){
+                polyname = "Triange";
+            }
+            else if(sides==8){
+                polyname = "Octagon";
+            }
+            else if(sides==9){
+                polyname = "Nonagon";
+            }
+            else if(sides==10){
+                polyname = "Decagon";
+            }
+            else if(sides==11){
+                polyname = "Hendecagon";
+            }
+            else if(sides==12){
+                polyname = "Dodecagon";
+            }
+            else if(sides >= 13) {
+                 polyname = (String)(sides+"-gon");   
+            }
+            else{
+                polyname = "";
+            }
+            
+            return polyname;
+    }
+    
 }
