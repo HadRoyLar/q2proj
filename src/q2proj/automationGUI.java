@@ -23,16 +23,20 @@ public class automationGUI implements ActionListener {
     JLabel instruct;
     JButton clear;
     JButton menu;
+    JButton check;
     RegPolygon p;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
     Font  f3  = new Font(Font.SANS_SERIF, Font.BOLD,  60);
     Font  f4  = new Font(Font.SANS_SERIF, Font.BOLD,  35);
     Font  f2  = new Font(Font.SERIF, Font.TYPE1_FONT,  18);
+    Font f0 = new Font("Arial", Font.BOLD, 13);
     JLabel autotxt;
     JTextField nosides;
     JLabel arrowto;
     JTextField intangle;
     JTextField extangle;
+    JLabel ian;
+    JLabel ean;
     JLabel intangleillus;
     JLabel extangleillus;
     
@@ -45,12 +49,14 @@ public class automationGUI implements ActionListener {
         navback = new JLabel();
         clear = new RoundedButton("Clear",10,220);
         menu = new RoundedButton("Menu",10,220);
+        check = new RoundedButton("Check",10,220);
         autotxt = new JLabel("Automations");
         instruct = new JLabel("Enter the number of sides of the polygon");
         nosides = new RoundTextField(10);
         arrowto = new JLabel("└");
         intangle = new RoundTextField(5);
-        
+        extangle = new RoundTextField(5);
+        ian = new JLabel("Interior Angle of Polygon");
 }
     public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
@@ -63,10 +69,12 @@ public class automationGUI implements ActionListener {
         frame.add(autotxt, new Rectangle(33,26,8,1));
         
         frame.add(clear, new Rectangle(1,26,4,1));
-        frame.add(menu, new Rectangle(6,26,4,1));
+        frame.add(menu, new Rectangle(11,26,4,1));
+        frame.add(check, new Rectangle(6,26,4,1));
+        check.setBackground(Color.gray);
         clear.setBackground(Color.gray);
-        clear.setFont(new Font("Arial", Font.BOLD, 13));
-        menu.setFont(new Font("Arial", Font.BOLD, 13));
+        clear.setFont(f0);
+        menu.setFont(f0);
         menu.setBackground(Color.gray);
         
         frame.add(instruct, new Rectangle(2,2,20,2));
@@ -74,7 +82,8 @@ public class automationGUI implements ActionListener {
         instruct.setForeground(Color.LIGHT_GRAY);
         
         //EXAMPLE = new RegPolygon (No. of Sides, Side Size, LIne Width, Rotation
-        //When you want the orientation to be correct No. Sides = Rotation, integer format
+        //When you want the orientation to be correct No. Sides = Rotation
+        
         p = new RegPolygon(4, 130,3,4);
         frame.add(p, new Rectangle(22,2,17,17));
         p.setOpaque(false);
@@ -84,22 +93,30 @@ public class automationGUI implements ActionListener {
         navback.setBackground(new java.awt.Color(67, 67, 67, 255));
         navback.setOpaque(true);
         
-        frame.add(arrowto, new Rectangle(4,4,2,2));
         
         frame.add(nosides, new Rectangle(6,5,3,2));
         nosides.setHorizontalAlignment(JTextField.CENTER);
         nosides.setFont(f1);
         nosides.setBackground(new java.awt.Color(67, 67, 67, 255));
         nosides.setForeground(Color.LIGHT_GRAY);
+        
         intangle.setFont(f4);
         intangle.setBackground(new java.awt.Color(54, 54, 54, 255));
         intangle.setForeground(Color.LIGHT_GRAY);
         intangle.setHorizontalAlignment(JTextField.CENTER);
         
-        frame.add(intangle, new Rectangle(6,9,5,4));
+        extangle.setFont(f4);
+        extangle.setBackground(new java.awt.Color(54, 54, 54, 255));
+        extangle.setForeground(Color.LIGHT_GRAY);
+        extangle.setHorizontalAlignment(JTextField.CENTER);
+        
+        frame.add(intangle, new Rectangle(10,9,5,4));
+        frame.add(extangle, new Rectangle(10,15,5,4));
+        
+        frame.add(ian, new Rectangle(3,12,8,1));
         
         
-        
+        frame.add(arrowto, new Rectangle(4,4,2,2));
         arrowto.setFont(f3);
         arrowto.setBorder(new EmptyBorder(0, 0, 0, 0));
         arrowto.setForeground(Color.GRAY);
@@ -109,8 +126,6 @@ public class automationGUI implements ActionListener {
         autotxt.setForeground(Color.LIGHT_GRAY);
         autotxt.setOpaque(false);
         autotxt.setFont(f1);
-        
-        
        
         frame.setVisible(true);
         
