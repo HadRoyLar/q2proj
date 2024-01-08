@@ -26,10 +26,15 @@ public class automationGUI implements ActionListener {
     RegPolygon p;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
     Font  f3  = new Font(Font.SANS_SERIF, Font.BOLD,  60);
+    Font  f4  = new Font(Font.SANS_SERIF, Font.BOLD,  35);
     Font  f2  = new Font(Font.SERIF, Font.TYPE1_FONT,  18);
     JLabel autotxt;
     JTextField nosides;
     JLabel arrowto;
+    JTextField intangle;
+    JTextField extangle;
+    JLabel intangleillus;
+    JLabel extangleillus;
     
     public automationGUI() {
     
@@ -42,8 +47,9 @@ public class automationGUI implements ActionListener {
         menu = new RoundedButton("Menu",10,220);
         autotxt = new JLabel("Automations");
         instruct = new JLabel("Enter the number of sides of the polygon");
-        nosides = new RoundTextField(5);
+        nosides = new RoundTextField(10);
         arrowto = new JLabel("└");
+        intangle = new RoundTextField(5);
         
 }
     public void setFrame() {
@@ -69,7 +75,7 @@ public class automationGUI implements ActionListener {
         
         //EXAMPLE = new RegPolygon (No. of Sides, Side Size, LIne Width, Rotation
         //When you want the orientation to be correct No. Sides = Rotation, integer format
-        p = new RegPolygon(10, 130,3,10);
+        p = new RegPolygon(4, 130,3,4);
         frame.add(p, new Rectangle(22,2,17,17));
         p.setOpaque(false);
         p.setForeground(Color.LIGHT_GRAY);
@@ -85,6 +91,12 @@ public class automationGUI implements ActionListener {
         nosides.setFont(f1);
         nosides.setBackground(new java.awt.Color(67, 67, 67, 255));
         nosides.setForeground(Color.LIGHT_GRAY);
+        intangle.setFont(f4);
+        intangle.setBackground(new java.awt.Color(54, 54, 54, 255));
+        intangle.setForeground(Color.LIGHT_GRAY);
+        intangle.setHorizontalAlignment(JTextField.CENTER);
+        
+        frame.add(intangle, new Rectangle(6,9,5,4));
         
         
         
