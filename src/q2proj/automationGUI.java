@@ -17,14 +17,20 @@ import q2proj.RegPolygon;
 import q2proj.RoundTextField;
 import q2proj.RoundedButton;
 
+
 public class automationGUI implements ActionListener {
+    
+    
+    int numsides;
+    int inang;
+    int exang;
     JFrame frame;
     JLabel navback;
     JLabel instruct;
     JButton clear;
     JButton menu;
     JButton check;
-    RegPolygon p;
+    RegPolygon q;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
     Font  f3  = new Font(Font.SANS_SERIF, Font.BOLD,  60);
     Font  f4  = new Font(Font.SANS_SERIF, Font.BOLD,  35);
@@ -43,26 +49,28 @@ public class automationGUI implements ActionListener {
     JLabel polynames;
     String s;
     
+    
     public automationGUI() {
     
         
-        
-
+        numsides = 4;
+        q = new RegPolygon(numsides, 150,3,numsides);
         frame = new JFrame();
         navback = new JLabel();
         clear = new RoundedButton("Clear",10,220);
         menu = new RoundedButton("Menu",10,220);
         check = new RoundedButton("Check",10,220);
         autotxt = new JLabel("Automations");
-        p = new RegPolygon(8, 150,3,4);
+        
         instruct = new JLabel("Enter the number of sides of the polygon");
         nosides = new RoundTextField(10);
         arrowto = new JLabel("└");
         intangle = new RoundTextField(5);
         extangle = new RoundTextField(5);
         ian = new JLabel("Interior Angle of Polygon");
-        ean = new JLabel("Exterior Angle of Polygon");s = p.polyname();
-        polynames = new JLabel(s);
+        ean = new JLabel("Exterior Angle of Polygon");
+        polynames = new JLabel(q.polyname());
+       
         
 }
     public void setFrame() {
@@ -93,9 +101,9 @@ public class automationGUI implements ActionListener {
         //EXAMPLE = new RegPolygon (No. of Sides, Side Size, LIne Width, Rotation
         //When you want the orientation to be correct No. Sides = Rotation
         
-        frame.add(p, new Rectangle(22,2,17,17));
-        p.setOpaque(false);
-        p.setForeground(Color.LIGHT_GRAY);
+        frame.add(q, new Rectangle(22,2,17,17));
+        q.setOpaque(false);
+        q.setForeground(Color.LIGHT_GRAY);
         
         frame.add(navback, new Rectangle(0,25,42,3));
         navback.setBackground(new java.awt.Color(67, 67, 67, 255));
@@ -152,13 +160,21 @@ public class automationGUI implements ActionListener {
         
         clear.addActionListener(this);
         menu.addActionListener(this);
-        
+        nosides.addActionListener(this);
+         frame.add(q, new Rectangle(22,2,17,17));
 }
     
-    public static void main (String[] args) {
-        automationGUI q = new automationGUI();
+   
+    public static void main(String[] args) {
+
+
+
+
+        
+            automationGUI q = new automationGUI();
         q.setFrame();
-    }
+  
+}
 
     public void actionPerformed(ActionEvent e) {
        String action = e.getActionCommand();
@@ -167,10 +183,31 @@ public class automationGUI implements ActionListener {
            frame.dispose();
            menu x = new menu();
            x.setFrame();
-           
+       }
+       
+       else if(action.equals(clear.getActionCommand())) {
+           intangle.setText("0°");
+           extangle.setText("0°");
            
        }
+       
+      
+       else if(action.equals(nosides.getAction())) {
+           
+           s = nosides.getText();
+           numsides = Integer.parseInt(s);
+           q.setVisible(false);
+           polynames.setVisible(true);
+           RegPolygon p;
+           p = new RegPolygon(numsides,150,3,numsides);
+           frame.add(p, new Rectangle(22,2,17,17));
+           
+       }
+           
+           
+       
     }
 
 }
+
 

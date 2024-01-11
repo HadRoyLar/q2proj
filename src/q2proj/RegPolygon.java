@@ -16,7 +16,7 @@ public class RegPolygon extends JPanel {
     public int length;
     public int thick;
     public int rot;
-    public String polyname;
+    public String polyname = "Polygon";
     public int s;
     
    
@@ -67,6 +67,7 @@ public class RegPolygon extends JPanel {
     
     public String polyname() {
         sides = s;
+        polyname = "Polygon";
         if(sides==3){
                 polyname = "Triangle";
             }

@@ -8,10 +8,10 @@ import java.util.*;
 
 /**
  *
- * @author orig Yutig, modified as an object
+ * @author Keiara
  */
 
-public class automationQ2{
+public class automationQ2Yutig {
     
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
