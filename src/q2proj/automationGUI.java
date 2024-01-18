@@ -33,7 +33,7 @@ public class automationGUI implements ActionListener {
     JButton clear;
     JButton menu;
     JButton check;
-    
+    JLabel polydef;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
     Font  f3  = new Font(Font.SANS_SERIF, Font.BOLD,  60);
     Font  f4  = new Font(Font.SANS_SERIF, Font.BOLD,  35);
@@ -54,12 +54,14 @@ public class automationGUI implements ActionListener {
     JTextField diagonalsnum;
     String s;
     public int o;
+    ImageIcon windowicon = new ImageIcon(getClass().getResource("images/icon1.png"));
     
     
     public automationGUI() {
-        panel=new JPanel();
+        
         
         frame = new JFrame();
+        frame.setIconImage(windowicon.getImage());
         navback = new JLabel();
         clear = new RoundedButton("Clear",10,220);
         menu = new RoundedButton("Menu",10,220);
@@ -176,6 +178,7 @@ public class automationGUI implements ActionListener {
         clear.addActionListener(this);
         menu.addActionListener(this);
         check.addActionListener(this);
+        nosides.addActionListener(this);
         
 }
     
@@ -190,6 +193,8 @@ public class automationGUI implements ActionListener {
         q.setFrame();
   
 }
+    
+    
 
     public void actionPerformed(ActionEvent e) {
        String action = e.getActionCommand();
@@ -204,6 +209,7 @@ public class automationGUI implements ActionListener {
            intangle.setText("0°");
            extangle.setText("0°");
            diagonalsnum.setText("0");
+           
            
            
        } 
@@ -245,10 +251,27 @@ public class automationGUI implements ActionListener {
            
            
            
+       }
+       
     }
+       
+    
 
 }
+       
+
+
+               
+
+                       
+
+         
+
+
+
+
+
     
-}
+           
 
 

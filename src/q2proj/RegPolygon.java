@@ -26,6 +26,17 @@ public class RegPolygon extends JPanel {
     public int val[] = null;
     public int ck;
     public boolean mk = false;
+    public int[] yPoints;
+    public int[] xPoints;
+    
+    JLabel ms;
+    ImageIcon iconX = new ImageIcon(getClass().getResource("images/icon2.png"));
+    
+    
+    
+    
+    
+    
     public RegPolygon (int sides, int length, int thick, int rot) {
         this.sides = sides;
         sides = this.sides;
@@ -33,8 +44,21 @@ public class RegPolygon extends JPanel {
         this.thick = thick;
         this.rot = rot;
         s = sides;     
+        
+   
     }
+    
+    
+    public void autoDraw(int side) {
+        if (s>=1) {
+            ms.setIcon(iconX);
+            ms.setVisible(true);
+        }
+        else {}
+    }
+    
     @Override
+    
     protected void paintComponent(Graphics g) {
         Graphics2D line = (Graphics2D) g;
         line.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -46,8 +70,8 @@ public class RegPolygon extends JPanel {
         int centerX = getWidth() / 2;
         int centerY = getHeight() / 2;
 
-        int[] xPoints = new int[sides];
-        int[] yPoints = new int[sides];
+        xPoints = new int[sides];
+        yPoints = new int[sides];
         
         double rotx = Math.PI/rot;
         for (int i = 0; i < sides; i++) {
@@ -116,15 +140,21 @@ public class RegPolygon extends JPanel {
         System.out.println("INTERIOR AND EXTERIOR ANGLES, AND DIAGONALS OF A REGULAR POLYGON");
         num = sides;
         System.out.print("\n\nInput number of sides of the polygon:");
-        ea = 360/num;
-        ia_sum = (num-2)*180;
-        ia = ia_sum/num; 
-        dia = (num*(num-3))/2;
+        
         if (num<=2) {
             ia = 0;
             ea = 0;
             dia = 0;
         }
+        
+        else if (num>=3) {
+            ea = 360/num;
+        ia_sum = (num-2)*180;
+        ia = ia_sum/num; 
+        dia = (num*(num-3))/2;
+        }
+        
+        
         val[0] = (int) ia;
         val[1] = (int) ea;
         val[2] = dia;
