@@ -19,7 +19,7 @@ public class game implements ActionListener{
         //RoundedButton Basics, example = new RoundedButton("text here", radius, shadeofgreywhenpressed)
         frame = new JFrame();
         navback = new JLabel();
-        gametxt = new JLabel("Game");
+        gametxt = new JLabel("Tic-Tac-Gon");
         next = new RoundedButton("→", 10, 220);
         previous = new RoundedButton("←", 10, 220);
         enter = new RoundedButton("OK", 15, 220);
@@ -41,7 +41,7 @@ public class game implements ActionListener{
     }
     public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
-        frame.add(gametxt, new Rectangle(35, 26, 8, 1));
+        frame.add(gametxt, new Rectangle(33, 26, 8, 1));
         frame.getContentPane().setBackground(new java.awt.Color(43, 43, 43, 255));
         frame.setSize(840,570);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
@@ -60,12 +60,11 @@ public class game implements ActionListener{
         next.setBackground(Color.gray);
         gametxt.setFont(f1);
         gametxt.setForeground(Color.LIGHT_GRAY);
-        gametxt.setHorizontalAlignment(2);
+        gametxt.setHorizontalAlignment(JLabel.LEFT);
         
         //*NEEDS IMPROVEMENT HERE:
         l1.setBorder(null);
         l1.setIcon(new ImageIcon(this.getClass().getResource("")));
-        
         
         //*
         
@@ -98,6 +97,9 @@ public class game implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        
+        
         
     }
 }

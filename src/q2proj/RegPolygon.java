@@ -109,8 +109,8 @@ public class RegPolygon extends JLabel{
             else if(s >= 13) {
                  polyname = (String)(sides+"-gon");   
             }
-            else{
-                polyname = "";
+            else if (s <=0 ){
+                polyname = "Positive vibes always";
             }
             return polyname;
     }
@@ -119,7 +119,7 @@ public class RegPolygon extends JLabel{
         System.out.println("INTERIOR AND EXTERIOR ANGLES, AND DIAGONALS OF A REGULAR POLYGON");
         num = s;
         System.out.print("\n\nInput number of sides of the polygon:");
-        if (num<=2) {
+        if (num<3) {
             ia = 0;
             ea = 0;
             dia = 0;

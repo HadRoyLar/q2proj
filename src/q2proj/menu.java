@@ -11,6 +11,8 @@ public class menu {
     JLabel navup;
     JLabel mainmenutxt;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
+    String X;
+    String O;
     /*ss*/
     
    
