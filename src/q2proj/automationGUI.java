@@ -52,8 +52,8 @@ public class automationGUI implements ActionListener {
     JLabel diasol;
     String s;
     public int o;
-    ImageIcon windowicon = new ImageIcon(getClass().getResource("images/icon1.png"));
-    ImageIcon deficon = new ImageIcon(getClass().getResource("images/icon2.png"));
+    ImageIcon windowicon = new ImageIcon(getClass().getResource(""));
+    ImageIcon deficon = new ImageIcon(getClass().getResource(""));
     public automationGUI() {
         frame = new JFrame();
         frame.setIconImage(windowicon.getImage());

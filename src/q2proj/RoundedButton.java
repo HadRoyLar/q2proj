@@ -41,28 +41,19 @@ public class RoundedButton extends JButton {
         int x = r;
         int y = r;
         int j = s;
-        
         int width = getWidth();
         int height = getHeight();
         RoundRectangle2D roundedRectangle = new RoundRectangle2D.Float(0, 0, width-1, height-1, x, y);
-
         if (getModel().isArmed()) {
             g2.setColor(new Color(j, j, j)); // Color when pressed
-            super.setForeground(Color.BLACK);
-            
+            super.setForeground(Color.BLACK);  
         } else {
             g2.setColor(getBackground());
             super.setForeground(Color.DARK_GRAY);
         }
-
         g2.fill(roundedRectangle);
-        
         g2.draw(roundedRectangle);
         g2.dispose();
-
         super.paintComponent(g);
     }
-    
-    
-
 }
