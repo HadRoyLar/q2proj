@@ -19,20 +19,15 @@ public class game implements ActionListener{
     JLabel gametxt;
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
     JButton l1, l2, l3, m1, m2, m3, r1, r2, r3;
-    
     static String[] board;
     static String turn;
-   
-   
     // CheckWinner method will 
     // decide the combination 
     // of three box given below.
-    
     public static String checkWinner()
     {
         for (int a = 0; a < 8; a++) {
             String line = null;
- 
             switch (a) {
             case 0:
                 line = board[0] + board[1] + board[2];
@@ -63,13 +58,11 @@ public class game implements ActionListener{
             if (line.equals("XXX")) {
                 return "X";
             }
-             
             // For O winner
             else if (line.equals("OOO")) {
                 return "O";
             }
-        }
-         
+        } 
         for (int a = 0; a < 9; a++) {
             if (Arrays.asList(board).contains(
                     String.valueOf(a + 1))) {
@@ -79,14 +72,12 @@ public class game implements ActionListener{
                 return "draw";
             }
         }
- 
        // To enter the X Or O at the exact place on board.
         System.out.println(
             turn + "'s turn; enter a slot number to place "
             + turn + " in:");
         return null;
     }
-     
     // To print out the board.
     /* |---|---|---|
        | 1 | 2 | 3 |
@@ -95,7 +86,6 @@ public class game implements ActionListener{
        |-----------|
        | 7 | 8 | 9 |
        |---|---|---|*/
-   
     public static void printBoard()
     {
         System.out.println("|---|---|---|");
@@ -112,9 +102,6 @@ public class game implements ActionListener{
                            + " |");
         System.out.println("|---|---|---|");
     }
- 
-   
-    
     public game() {
         //RoundedButton Basics, example = new RoundedButton("text here", radius, shadeofgreywhenpressed)
         frame = new JFrame();
@@ -191,7 +178,6 @@ public class game implements ActionListener{
         r1.addActionListener(this);
         r2.addActionListener(this);
         r3.addActionListener(this);
-        
         l1.setBackground(Color.GRAY);
         l2.setBackground(Color.GRAY);
         l3.setBackground(Color.GRAY);
@@ -215,16 +201,14 @@ public class game implements ActionListener{
         for (int a = 0; a < 9; a++) {
             board[a] = String.valueOf(a + 1);
         }
- 
+        
         System.out.println("Welcome to 3x3 Tic Tac Toe.");
         printBoard();
  
         System.out.println(
             "X will play first. Enter a slot number to place X in:");
- 
         while (winner == null) {
             int numInput;
-           
            // Exception handling.
            // numInput will take input from user like from 1 to 9.
            // If it is not in range from 1 to 9.
@@ -264,7 +248,6 @@ public class game implements ActionListener{
                     "Slot already taken; re-enter slot number:");
             }
         }
-       
         // If no one win or lose from both player x and O.
         // then here is the logic to print "draw".
         if (winner.equalsIgnoreCase("draw")) {
@@ -279,8 +262,6 @@ public class game implements ActionListener{
                 + "'s have won! Thanks for playing.");
         }
       in.close();
- 
-      
       //* TIC TAC TOE LOGIC END
     }
     @Override
