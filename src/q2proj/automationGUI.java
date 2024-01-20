@@ -58,9 +58,9 @@ public class automationGUI implements ActionListener {
         frame = new JFrame();
         frame.setIconImage(windowicon.getImage());
         navback = new JLabel();
-        clear = new RoundedButton("Clear",10,220);
-        menu = new RoundedButton("Menu",10,220);
-        check = new RoundedButton("Check",10,220);
+        clear = new RoundedButton("Clear",10,220,false);
+        menu = new RoundedButton("Menu",10,220,false);
+        check = new RoundedButton("Check",10,220,false);
         autotxt = new JLabel("Automations");
         instruct = new JLabel("Enter the number of sides of the polygon");
         nosides = new RoundTextField(10);

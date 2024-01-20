@@ -19,11 +19,11 @@ public class RoundedButton extends JButton {
     int s;
     int j;
     
-    public RoundedButton(String text, int f, int shade) {   
+    public RoundedButton(String text, int f, int shade, boolean k) {   
         super(text);
         setContentAreaFilled(false);
         setFocusPainted(false);
-        setBorderPainted(false);
+        setBorderPainted(k);
         
         r = f;
      
