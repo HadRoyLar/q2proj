@@ -144,6 +144,20 @@ public class newdraft {
 						turn="X";
 					}
 				}
+                                else if(numInput>6 && numInput<10){
+           				System.out.println("\nHow many diagonals does a polygon have if it has " +rand+" sides?");
+					System.out.print("Answer: ");
+               				ans=sc.nextInt();
+               				int d=(rand*(rand-3))/2;
+               				if(ans==d){
+						System.out.println("Correct!");
+                     				turn="O";
+                    			}
+					else{
+						System.out.println("Wrong!");
+						turn="X";
+					}
+				}
           
                 		board[numInput-1]=turn;
                 		printBoard();
