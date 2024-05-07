@@ -1,4 +1,4 @@
-package q2proj;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,9 +11,9 @@ public class templategui{
     /*IDK*/
     JFrame frame;
     JLabel navback;
-    RoundedButton next;
-    RoundedButton previous;
-    RoundedButton enter;
+    RoundedButton1 next;
+    RoundedButton1 previous;
+    RoundedButton1 enter;
     
    
     
@@ -24,9 +24,9 @@ public class templategui{
         //*MAIN - FRAMEWORK - TEMP* navbar code
         frame = new JFrame();
         navback = new JLabel();
-        next = new RoundedButton("→", 10, 220);
-        previous = new RoundedButton("←", 10, 220);
-        enter = new RoundedButton("OK", 15, 220);
+        next = new RoundedButton1("→", 10, 220,false);
+        previous = new RoundedButton1("←", 10, 220,false);
+        enter = new RoundedButton1("OK", 15, 220,false);
         //* END 
         
         

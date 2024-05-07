@@ -1,4 +1,4 @@
-package q2proj;
+
 
 import java.util.Random;
 import java.util.Scanner;

@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package q2proj;
 
 /**
  *
@@ -11,11 +10,8 @@ package q2proj;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.lang.reflect.Field;
 import javax.swing.border.EmptyBorder;
-import q2proj.RegPolygon;
-import q2proj.RoundTextField;
-import q2proj.RoundedButton;
+
 import java.util.Random;
 public class automationGUI implements ActionListener {
     RegPolygon q;
@@ -58,9 +54,9 @@ public class automationGUI implements ActionListener {
         frame = new JFrame();
         frame.setIconImage(windowicon.getImage());
         navback = new JLabel();
-        clear = new RoundedButton("Clear",10,220,false);
-        menu = new RoundedButton("Menu",10,220,false);
-        check = new RoundedButton("Check",10,220,false);
+        clear = new RoundedButton1("Clear",10,220,false);
+        menu = new RoundedButton1("Menu",10,220,false);
+        check = new RoundedButton1("Check",10,220,false);
         autotxt = new JLabel("Automations");
         instruct = new JLabel("Enter the number of sides of the polygon");
         nosides = new RoundTextField(10);

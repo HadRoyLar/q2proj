@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package q2proj;
 /**
  * @author automations Yutig
  * @author polygon constructor from the internet, modified a bit  by ROyLar

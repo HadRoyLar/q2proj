@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package q2proj;
 
 /**
  *
@@ -13,13 +12,13 @@ import java.awt.*;
 import static java.awt.Color.getColor;
 import java.awt.geom.RoundRectangle2D;
 
-public class RoundedButton extends JButton {
+public class RoundedButton1 extends JButton {
 
     int r;
     int s;
     int j;
     
-    public RoundedButton(String text, int f, int shade, boolean k) {   
+    public RoundedButton1(String text, int f, int shade, boolean k) {   
         super(text);
         setContentAreaFilled(false);
         setFocusPainted(false);

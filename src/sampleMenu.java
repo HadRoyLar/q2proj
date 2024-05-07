@@ -1,4 +1,4 @@
-package q2proj;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,6 +36,7 @@ public class sampleMenu implements KeyListener{
         }
         if(keyCode==KeyEvent.VK_UP||keyCode==KeyEvent.VK_DOWN){
             tiles[temp].setIcon(image);
+            
             tiles[currentTile].setIcon(image);
         }
     }
@@ -43,7 +44,7 @@ public class sampleMenu implements KeyListener{
     public sampleMenu() {
         this.img = new ImageIcon(getClass().getResource(""));
         
-        this.icon1 = new ImageIcon(getClass().getResource(""));
+        this.icon1 = new ImageIcon(getClass().getResource("assets/icon1.png"));
         frame=new JFrame("Menu   -   Group 6 Adenine");
         
         frame.setIconImage(img.getImage());

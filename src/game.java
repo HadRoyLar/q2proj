@@ -1,4 +1,4 @@
-package q2proj;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,9 +12,9 @@ public class game implements ActionListener{
     /*IDK*/
     JFrame frame;
     JLabel navback;
-    RoundedButton next;
-    RoundedButton previous;
-    RoundedButton enter;
+    RoundedButton1 next;
+    RoundedButton1 previous;
+    RoundedButton1 enter;
     JLabel gametxt;
     JLabel inst;
     JLabel manual;
@@ -22,7 +22,7 @@ public class game implements ActionListener{
     Font  f1  = new Font(Font.SANS_SERIF, Font.BOLD,  21);
     Font  f2  = new Font(Font.SANS_SERIF, Font.BOLD,  35);
     Font  f4  = new Font(Font.SANS_SERIF, Font.PLAIN,  17);
-    RoundedButton[][] button;
+    RoundedButton1[][] button;
     int[][] sel;
     boolean locking = false;
     boolean check = true;
@@ -33,25 +33,25 @@ public class game implements ActionListener{
    
     
     
-    private game() {
+    public game() {
         //RoundedButton Basics, example = new RoundedButton("text here", radius, shadeofgreywhenpressed)
         frame = new JFrame();
         navback = new JLabel();
         gametxt = new JLabel("Tic-Tac-Gon");
-        next = new RoundedButton("→", 10, 220, false);
-        previous = new RoundedButton("←", 10, 220, false);
-        enter = new RoundedButton("OK", 15, 220, false);
+        next = new RoundedButton1("→", 10, 220, false);
+        previous = new RoundedButton1("←", 10, 220, false);
+        enter = new RoundedButton1("OK", 15, 220, false);
         status = new JLabel("Status");
         manual = new JLabel();
         sel = new int[3][3];
         inst = new JLabel();
       
-       button = new RoundedButton[3][3];
+       button = new RoundedButton1[3][3];
        ans = new RoundTextField(10);
        
        for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
-                button[row][col] = new RoundedButton("",4,110,true);
+                button[row][col] = new RoundedButton1("",4,110,true);
                 button[row][col].setFont(f2);  
             }
         } 
@@ -59,7 +59,7 @@ public class game implements ActionListener{
     
     
     
-    private void setFrame() {
+    public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
         frame.add(gametxt, new Rectangle(33, 26, 8, 1));
         frame.getContentPane().setBackground(new java.awt.Color(43, 43, 43, 255));
@@ -154,9 +154,18 @@ public class game implements ActionListener{
                     button[row1][col1].setText("X");
                     sel[row1][col1] = 2;
                     button[row1][col1].setEnabled(false);
-                    
-                    
-                   int questrand = ThreadLocalRandom.current().nextInt(1, 4 + 1);
+                     
+                               
+                                }
+                      
+                   }
+            
+        }
+        
+           }
+    
+    public void dothis() {
+    int questrand = ThreadLocalRandom.current().nextInt(1, 4 + 1);
                    
                    switch (questrand) {
                        case 4:
@@ -402,16 +411,7 @@ public class game implements ActionListener{
                                    
                                }
                                while(conf==true);
-                              
-                               
-                               
-                                }
-                      
-                   }
-            
-        }
-        
-           }
+    }
         
     
             
