@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 //* By RoyLar GUI
 
 
-public class game implements ActionListener{
+public class game1 implements ActionListener{
     /*IDK*/
     JFrame frame;
     JLabel navback;
@@ -33,7 +33,7 @@ public class game implements ActionListener{
    
     
     
-    public game() {
+    public game1() {
         //RoundedButton Basics, example = new RoundedButton("text here", radius, shadeofgreywhenpressed)
         frame = new JFrame();
         navback = new JLabel();
