@@ -54,7 +54,7 @@ public class menu implements ActionListener {
         previous = new RoundedButton1("←", 10, 220, false);
         enter = new RoundedButton1("OK", 15, 220, false);
         menutxt = new JLabel("Main Menu");
-        diakomalandi = new JLabel("GeeSix Adenine");
+        diakomalandi = new JLabel("TheLastSix Adenine");
         //* END 
         auto = new RoundedButton1("Automations", 10, 220, false);
         help = new RoundedButton1("Help", 10, 220, false);
@@ -136,7 +136,7 @@ public class menu implements ActionListener {
 
         frame.add(menutxt, new Rectangle(33, 26, 8, 1));
         menutxt.setFont(f1);
-        menutxt.setForeground(Color.ORANGE);
+        menutxt.setForeground(Color.CYAN);
         menutxt.setHorizontalAlignment(JLabel.LEFT);
         menutxt.setVisible(true);
         menutxt.setOpaque(false);
@@ -144,7 +144,7 @@ public class menu implements ActionListener {
        
         frame.add(diakomalandi, new Rectangle(3, 26, 8, 1));
         diakomalandi.setFont(f4);
-        diakomalandi.setForeground(Color.ORANGE);
+        diakomalandi.setForeground(Color.CYAN);
         diakomalandi.setHorizontalAlignment(JLabel.LEFT);
         diakomalandi.setVisible(true);
         diakomalandi.setOpaque(false);

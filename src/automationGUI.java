@@ -7,12 +7,17 @@
  *
  * @author RoyLar
  */
+import jaco.mp3.player.MP3Player;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.border.EmptyBorder;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class automationGUI implements ActionListener {
     RegPolygon q;
     JPanel panel; 
@@ -50,6 +55,13 @@ public class automationGUI implements ActionListener {
     public int o;
     ImageIcon windowicon = new ImageIcon(getClass().getResource(""));
     ImageIcon deficon = new ImageIcon(getClass().getResource(""));
+    
+    MP3Player player = new MP3Player();
+    URL bgmuse;
+    
+    MP3Player press = new MP3Player();
+    URL click;
+    
     public automationGUI() {
         frame = new JFrame();
         frame.setIconImage(windowicon.getImage());
@@ -71,6 +83,29 @@ public class automationGUI implements ActionListener {
         intsol = new JLabel("");
         extsol = new JLabel("");
         diasol = new JLabel("");
+        
+        
+         try {
+            bgmuse = new URL(getClass().getResource("assets/gamemusic.mp3").toExternalForm());
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        player.addToPlayList(bgmuse);
+        
+        try {
+            click = new URL(getClass().getResource("assets/click.mp3").toExternalForm());
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        press.addToPlayList(click);
+        
+
+    //player.setRepeat(true); 
+    //player.play();
+        
+        
 }
     public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
@@ -167,11 +202,13 @@ public class automationGUI implements ActionListener {
     public void actionPerformed(ActionEvent e) {
        String action = e.getActionCommand();
        if(action.equals(menu.getActionCommand())) {
+           press.play();
            frame.dispose();
            menu k = new menu();
            k.setFrame();
        }
        else if(action.equals(clear.getActionCommand())) {
+           press.play();
            intangle.setText("0°");
            extangle.setText("0°");
            diagonalsnum.setText("0");
@@ -179,6 +216,7 @@ public class automationGUI implements ActionListener {
            q.repaint();   
        } 
        else if(action.equals(check.getActionCommand())) {
+           press.play();
            Random r = new Random();
            char c = (char)(r.nextInt(26) + 'a');
            s = nosides.getText();

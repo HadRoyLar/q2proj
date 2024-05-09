@@ -155,6 +155,7 @@ public class game implements ActionListener{
                     sel[row1][col1] = 2;
                     button[row1][col1].setEnabled(false);
                      dothis();
+                     ftir();
                                
                                 }
                       
@@ -330,7 +331,12 @@ public class game implements ActionListener{
             
                         
                                
-                               //*CHECKPLAYER
+                               
+    }
+        
+    
+            public void ftir() {
+                //*CHECKPLAYER
                                if (sel[0][0]*sel[0][1]*sel[0][2]==8 ||  sel[0][0]*sel[0][1]*sel[0][2]==27) {
                                    check=false;
                                    locking = true;;;;
@@ -411,10 +417,7 @@ public class game implements ActionListener{
                                    
                                }
                                while(conf==true);
-    }
-        
-    
-            
+            }
             
     }
         
