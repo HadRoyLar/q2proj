@@ -8,9 +8,7 @@ import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /*
-
 
 GAMECODE: HadRoyLar
 AUTOCODE: DisisK
@@ -86,15 +84,13 @@ public class menu implements ActionListener {
 
         menu q = new menu();
         q.setFrame();
-
     }
 
     public void setFrame() {
         frame.setLayout(new GraphPaperLayout(new Dimension(40, 27)));
         frame.add(menutxt, new Rectangle(30, 26, 8, 1));
-        frame.getContentPane().setBackground(Color.gray);
+        frame.getContentPane().setBackground(Color.LIGHT_GRAY);
         frame.setSize(840, 570);
-
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
@@ -109,7 +105,7 @@ public class menu implements ActionListener {
         next.setMargin(new Insets(1, 1, 7, 1));
         enter.setFont(new Font("Arial", Font.BOLD, 15));
         enter.setMargin(new Insets(2, 1, 1, 2));
-        enter.setBackground(Color.gray);
+        enter.setBackground(Color.DARK_GRAY);
         next.setBackground(Color.gray);
 
         previous.setVisible(false);
@@ -125,7 +121,6 @@ public class menu implements ActionListener {
         help.setFont(f0);
         help.setBackground(Color.DARK_GRAY);
         
-        
         auto.setFont(f0);
         auto.setBackground(Color.DARK_GRAY);
         game.setFont(f0);
@@ -138,7 +133,6 @@ public class menu implements ActionListener {
         auto.setForeground(Color.WHITE);
         exit.setForeground(Color.WHITE);
         help.setForeground(Color.WHITE);
-        
 
         frame.add(menutxt, new Rectangle(33, 26, 8, 1));
         menutxt.setFont(f1);
@@ -146,7 +140,8 @@ public class menu implements ActionListener {
         menutxt.setHorizontalAlignment(JLabel.LEFT);
         menutxt.setVisible(true);
         menutxt.setOpaque(false);
-
+        
+       
         frame.add(diakomalandi, new Rectangle(3, 26, 8, 1));
         diakomalandi.setFont(f4);
         diakomalandi.setForeground(Color.ORANGE);
