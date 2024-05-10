@@ -58,7 +58,7 @@ public class tutor implements ActionListener {
         //frame.setContentPane(bgm);
         
         
-        frame.setSize(860, 540);
+        frame.setSize(870, 540);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
@@ -82,20 +82,17 @@ public class tutor implements ActionListener {
         clear.setFont(f0);
         menu.setFont(f0);
         menu.setBackground(Color.DARK_GRAY);
-
-
+        
         previous.setVisible(false);
         enter.setVisible(false);
         next.setVisible(false);
         menu.setVisible(true);
-
 
         frame.add(navback, new Rectangle(0, 25, 42, 3));
         navback.setBackground(new Color(67, 67, 67, 255));
         navback.setVisible(true);
         navback.setOpaque(true);
         navback.setBackground(new Color(200, 200, 200, 90));
-
 
         frame.setVisible(true);
         frame.add(bg, new Rectangle(0,0,40,27));
@@ -115,16 +112,24 @@ public class tutor implements ActionListener {
         
         switch(kj) {
             case 0 -> {
-                this.img = new ImageIcon(getClass().getResource("assets/quick.png"));
-        bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_FAST)));
+                this.img = new ImageIcon(getClass().getResource("assets/YUT.png"));
+        bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_AREA_AVERAGING)));
        
         frame.repaint();
         frame.invalidate();
         frame.validate();
             }
             case 1 -> {
-                this.img = new ImageIcon(getClass().getResource("assets/last.png"));
-       bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(840, 570,  java.awt.Image.SCALE_FAST)));
+                this.img = new ImageIcon(getClass().getResource("assets/YUT.png"));
+       bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_AREA_AVERAGING)));
+        frame.repaint();
+        frame.invalidate();
+        frame.validate();
+            }
+            
+            case 2 -> {
+                this.img = new ImageIcon(getClass().getResource("assets/LOG.png"));
+       bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_AREA_AVERAGING)));
         frame.repaint();
         frame.invalidate();
         frame.validate();
@@ -135,6 +140,8 @@ public class tutor implements ActionListener {
             default -> {
                 if(kj>0) {
                 frame.dispose();
+                game x = new game();
+                x.setFrame();
                 }
             }
             

@@ -14,7 +14,6 @@ import java.awt.event.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.border.EmptyBorder;
-
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
