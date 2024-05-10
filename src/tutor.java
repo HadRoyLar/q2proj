@@ -113,14 +113,14 @@ public class tutor implements ActionListener {
         switch(kj) {
             case 0 -> {
                 this.img = new ImageIcon(getClass().getResource("assets/YUT.png"));
-        bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_AREA_AVERAGING)));
+        bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_REPLICATE)));
        
         frame.repaint();
         frame.invalidate();
         frame.validate();
             }
             case 1 -> {
-                this.img = new ImageIcon(getClass().getResource("assets/YUT.png"));
+                this.img = new ImageIcon(getClass().getResource("assets/intext.png"));
        bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_AREA_AVERAGING)));
         frame.repaint();
         frame.invalidate();
@@ -129,7 +129,7 @@ public class tutor implements ActionListener {
             
             case 2 -> {
                 this.img = new ImageIcon(getClass().getResource("assets/LOG.png"));
-       bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_AREA_AVERAGING)));
+       bg.setIcon(new ImageIcon(img.getImage().getScaledInstance(870, 540,  java.awt.Image.SCALE_REPLICATE)));
         frame.repaint();
         frame.invalidate();
         frame.validate();
