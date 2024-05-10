@@ -69,7 +69,7 @@ public class menu implements ActionListener {
         }
         
         try {
-            click = new URL(getClass().getResource("").toExternalForm());
+            click = new URL(getClass().getResource("assets/click.mp3").toExternalForm());
         } catch (MalformedURLException ex) {
             Logger.getLogger(game.getName()).log(Level.SEVERE, null, ex);
         }
